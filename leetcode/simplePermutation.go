@@ -5,7 +5,7 @@ import "fmt"
 var counter = 0
 
 func main() {
-	str := "abcdefgh"
+	str := "abcd"
 	runes := []rune(str)
 
 	fmt.Println("The rune now is : ", string(runes))

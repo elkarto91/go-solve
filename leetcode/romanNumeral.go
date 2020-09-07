@@ -9,7 +9,27 @@ func romanToDecimal(roman string) {
 
 	romanArray := strings.Split(roman, "")
 	fmt.Println("Roman Array ", romanArray)
+	length := len(romanArray)
+	res := 0
+	for i := 0; i < length; i++ {
 
+		k := getValue(romanArray[i])
+
+		if i+1 < length {
+			v := getValue(romanArray[i+1])
+			if k >= v {
+				res = res + k
+			} else {
+				res = res + v - k
+				i++
+			}
+		} else {
+			res = res + k
+			i++
+		}
+
+	}
+	fmt.Println("The Roman Numeral and Decimal Number are ---- > ", roman, res)
 }
 func getValue(r string) int {
 
